@@ -1,0 +1,37 @@
+# ── Web framework ─────────────────────────────────────────────────────────────
+flask==3.1.1
+python-dotenv==1.0.1
+
+# ── WSGI server (production) ──────────────────────────────────────────────────
+gunicorn==23.0.0
+
+# ── LangChain core stack (0.3.x series, all mutually compatible) ──────────────
+# langchain-core is NOT pinned to an exact version — let pip pick the latest
+# 0.3.x that satisfies all packages below simultaneously.
+langchain==0.3.24
+langchain-community==0.3.23
+langchain-core>=0.3.60,<0.4.0
+
+# ── LLM provider — Groq (cloud, API key required) ─────────────────────────────
+langchain-groq==0.2.4
+
+# ── Embeddings — HuggingFace sentence-transformers (default, cloud-compatible) ─
+# Runs entirely in-process on CPU. No external service required.
+# Default model: all-MiniLM-L6-v2 (~90 MB, 384-dim vectors)
+sentence-transformers==3.4.1
+
+# ── Embeddings — Ollama (optional, local development only) ────────────────────
+# Uncomment these two lines only when running locally with EMBED_PROVIDER=ollama.
+# langchain-ollama==0.3.2
+# ollama==0.4.8
+
+# ── Document loading ──────────────────────────────────────────────────────────
+pypdf==5.4.0
+beautifulsoup4==4.13.3
+lxml==5.3.1
+
+# ── Vector store — ChromaDB ───────────────────────────────────────────────────
+# langchain-chroma 0.2.x is compatible with langchain-core 0.3.x
+# (1.x requires langchain-core 1.x which is a different major series)
+chromadb==1.5.9
+langchain-chroma==0.2.4
